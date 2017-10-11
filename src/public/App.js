@@ -1,27 +1,18 @@
 import React from 'react';
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      color: 'red',
-    }
-    this.handleClick = this.handleClick.bind(this);
-  }
-  handleClick () {
-    const newColor = this.state.color === 'red' ? 'blue' : 'red';
-    this.setState({
-      color: newColor,
-    })
-  }
-  render() {
-     return (
-      <div>
-        <div style={{color: this.state.color}}>todo</div>
-        <button onClick={this.handleClick}>press</button>
-      </div>
-    )
-  }
-}
+// import { Provider } from 'react-redux';
+// import store from './store';
 
-export default App;
+import { connect } from 'react-redux';
+
+const App = (props:{color: string}) => (
+        // <Provider store={store}>
+          <div>
+            <div style={{color: props.color}}>todo</div>
+          </div>
+        // </Provider>
+)
+
+const mapStateToProps = state => ({ color: state.color });
+
+export default connect(mapStateToProps)(App);
