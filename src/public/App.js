@@ -1,10 +1,4 @@
 import React from 'react';
-// import {connect} from 'react-redux';
-// import {test} from '../../actions/actions';
-
-// const mapDispatchToProps = dispatch => ({
-//   test: a => dispatch(test(a)),
-// });
 
 class App extends React.Component {
   constructor(props) {
@@ -30,5 +24,4 @@ class App extends React.Component {
   }
 }
 
-// App = connect(null, mapDispatchToProps)(App);
 export default App;
