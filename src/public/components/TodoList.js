@@ -20,7 +20,11 @@ class TodoList extends React.Component {
         <div className="todoList-wrapper" ref="todoListWrapper">
           {this.props.todos.map((todo, idx) => (
             <div className="todoList-todo" key={idx}>
-              <span>{todo}</span>
+              <div>
+                <button />
+                <span>{todo}</span>
+              </div>
+              <button />
             </div>
           ))}
         </div>

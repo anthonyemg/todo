@@ -21,7 +21,6 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  /*border: solid 1px #6eb062;*/
   border-radius: 20px;
   box-shadow: 4px 4px 20px #888888;
   background-color: white;
@@ -59,7 +58,6 @@ body {
   background-color: transparent;
   padding: 20px;
   box-sizing: border-box;
-  /*overflow: auto;*/
 }
 
 .todoList-wrapper {
@@ -70,9 +68,34 @@ body {
 
 .todoList-todo {
   width: 100%;
+  display: flex;
   align-items: center;
+  justify-content: space-between;
   font-size: 16px;
   border-bottom: solid 1px lightgrey;
   padding: 6px;
   box-sizing: border-box;
+}
+.todoList-todo:hover button {
+  box-shadow: 0px 1px 6px #888888;
+  color: black;
+}
+
+.todoList-todo button {
+  height: 20px;
+  width: 20px;
+  color: transparent;
+  border-radius: 10px;
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  outline: none;
+}
+
+.todoList-todo button:active {
+  background-color: #6eb062;
+}
+
+.todoList-todo span {
+  margin-left: 20px;
 }
