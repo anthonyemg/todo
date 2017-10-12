@@ -11,10 +11,13 @@ class TodoList extends React.Component {
   constructor(props) {
     super(props);
   }
+  componentDidUpdate() {
+    this.refs.todoListWrapper.scrollTop = this.refs.todoListWrapper.scrollTop = 0;
+  }
   render() {
     return (
       <div className="todoList-container">
-        <div className="todoList-wrapper">
+        <div className="todoList-wrapper" ref="todoListWrapper">
           {this.props.todos.map((todo, idx) => (
             <div className="todoList-todo" key={idx}>
               <span>{todo}</span>

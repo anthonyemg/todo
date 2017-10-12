@@ -23,7 +23,7 @@ class InputBar extends React.Component {
     });
   }
   handleEnterKeyPress(e) {
-    if (e.charCode === 13) {
+    if (e.charCode === 13 && this.state.newTodo !== '') {
       const newTodos = [...this.props.todos, this.state.newTodo];
       this.props.updateTodos(newTodos);
       this.setState({
