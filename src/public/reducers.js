@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
 
-const color = (state = 'red', action) => {
+const todos = (state = [], action) => {
   switch (action.type) {
-    case 'SET_COLOR':
+    case 'UPDATE_TODOS':
       return action.payload;
     default:
       return state;
@@ -10,7 +10,7 @@ const color = (state = 'red', action) => {
 };
 
 const rootReducer = combineReducers({
-  color
+  todos
 });
 
 export default rootReducer;

@@ -1,3 +1,3 @@
-export function setColor(color) {
-  return { type: 'SET_COLOR', payload: color };
+export function updateTodos(todo) {
+  return { type: 'UPDATE_TODOS', payload: todo };
 }
