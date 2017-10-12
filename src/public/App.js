@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { setColor } from './actionCreators';
+import { setColor } from './actions';
 
-const App = (props:{color: string, handleColorChange: Function}) => (
+const App = (props) => (
   <div>
     <div
       style={{color: props.color}}
@@ -13,11 +13,12 @@ const App = (props:{color: string, handleColorChange: Function}) => (
   </div>
 )
 
-const mapStateToProps = state => ({ color: state.color });
-const mapDispachToProps = (dispatch: Function) => ({
-  handleColorChange(color) {
-    dispatch(setColor(color));
-  }
+const mapStateToProps = state => ({
+  color: state.color,
+});
+
+const mapDispachToProps = dispatch => ({
+  handleColorChange: color => dispatch(setColor(color)),
 });
 
 export default connect(mapStateToProps, mapDispachToProps)(App);
