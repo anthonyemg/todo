@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { setColor } from './actions';
 
@@ -12,6 +13,10 @@ const App = (props) => (
     </div>
   </div>
 )
+
+App.propTypes = {
+  color: PropTypes.string.isRequired,
+}
 
 const mapStateToProps = state => ({
   color: state.color,
