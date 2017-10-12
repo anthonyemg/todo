@@ -10,7 +10,11 @@ class InputBar extends React.Component {
     super(props);
   }
   render() {
-    return <div>search bar</div>;
+    return (
+      <div className="inputBar-container">
+        <input placeholder="add todo" />
+      </div>
+    );
   }
 }
 

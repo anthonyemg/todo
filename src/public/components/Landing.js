@@ -12,7 +12,7 @@ class Landing extends React.Component {
   }
   render() {
     return (
-      <div>
+      <div className="landing-container">
         <InputBar />
         <TodoList />
       </div>

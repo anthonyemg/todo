@@ -1,7 +1,71 @@
 body {
+  height: 100vh;
+  width: 100vw;
   margin: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid 1px grey;
+  border-radius: 4px;
+  background-color: #f3f3f3;
 }
 
-body div {
-  cursor: pointer;
+.landing-container {
+  width: 40vw;
+  height: 40vh;
+  min-width: 300px;
+  min-height: 300px;
+  max-width: 500px;
+  max-height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  border: solid 6px #6eb062;
+  border-radius: 20px;
+  background-color: white;
+}
+
+.inputBar-container {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  background-color: white;
+}
+
+.inputBar-container input {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-size: 16px;
+  background-color: transparent;
+  border-top: transparent;
+  border-left: transparent;
+  border-right: transparent;
+  border-bottom: solid 6px #6eb062;
+  outline: none;
+}
+
+.todoList-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: transparent;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow: auto;
+}
+
+.todoList-todo {
+  width: 100%;
+  align-items: center;
+  font-size: 16px;
+  border-bottom: solid 1px lightgrey;
+  padding: 6px;
+  box-sizing: border-box;
 }
