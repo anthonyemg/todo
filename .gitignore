@@ -3,3 +3,6 @@ node_modules/
 
 # bundle
 src/public/dist/
+
+# tests
+__test__/
