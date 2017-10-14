@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux';
 
 const todos = (state = ['take out trash', 'gym'], action) => {
+  console.log(action);
   switch (action.type) {
     case 'UPDATE_TODOS':
       return action.payload;
@@ -9,8 +10,21 @@ const todos = (state = ['take out trash', 'gym'], action) => {
   }
 };
 
+const displayLightbox = (state = false, action) => {
+  console.log(action);
+  switch (action.type) {
+    case 'SHOW_LIGHTBOX':
+      return action.payload;
+    case 'HIDE_LIGHTBOX':
+      return action.payload;
+    default:
+      return state;
+  }
+};
+
 const rootReducer = combineReducers({
-  todos
+  todos,
+  displayLightbox
 });
 
 export default rootReducer;

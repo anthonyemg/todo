@@ -1,13 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { showLightbox, hideLightbox } from '../actions.js';
+
+import Lightbox from './Lightbox';
+import TodoLightbox from './TodoLightbox';
 
 const propTypes = {
-  todos: PropTypes.array.isRequired
+  todos: PropTypes.array.isRequired,
+  displayLightbox: PropTypes.bool.isRequired
 };
-const defaultProps = {
-  todos: ['af', 'sf']
-};
+const defaultProps = {};
 
 class TodoList extends React.Component {
   constructor(props) {
@@ -23,13 +26,23 @@ class TodoList extends React.Component {
           {this.props.todos.map((todo, idx) => (
             <div className="todoList-todo" key={idx}>
               <div>
-                <button className="todoList-doneButtom" />
+                <button
+                  onClick={this.props.showLightbox}
+                  className="todoList-doneButtom"
+                />
                 <span>{todo}</span>
               </div>
               <button className="todoList-deleteButtom" />
             </div>
           ))}
         </div>
+        {this.props.displayLightbox ? (
+          <Lightbox>
+            <TodoLightbox hideLightbox={this.props.hideLightbox} />
+          </Lightbox>
+        ) : (
+          ''
+        )}
       </div>
     );
   }
@@ -39,8 +52,12 @@ TodoList.propTypes = propTypes;
 TodoList.defaultProps = defaultProps;
 
 const mapStateToProps = state => ({
-  todos: state.todos
+  todos: state.todos,
+  displayLightbox: state.displayLightbox
 });
-const mapDispachToProps = state => ({});
+const mapDispachToProps = dispatch => ({
+  showLightbox: () => dispatch(showLightbox()),
+  hideLightbox: () => dispatch(hideLightbox())
+});
 
 export default connect(mapStateToProps, mapDispachToProps)(TodoList);
