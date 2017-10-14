@@ -6,7 +6,6 @@ body {
   justify-content: center;
   align-items: center;
   border: solid 1px grey;
-  border-radius: 4px;
   background-color: #f3f3f3;
 }
 
@@ -21,7 +20,7 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  border-radius: 20px;
+  border-radius: 6px;
   box-shadow: 4px 4px 20px #888888;
   background-color: white;
 }
@@ -29,11 +28,8 @@ body {
 .inputBar-container {
   width: 100%;
   height: 60px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 20px;
-  background-color: white;
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
 }
 
 .inputBar-container input {
@@ -41,11 +37,12 @@ body {
   height: 100%;
   text-align: center;
   font-size: 16px;
-  background-color: transparent;
-  border-top: transparent;
-  border-left: transparent;
-  border-right: transparent;
+  background-color: #f3f3f3;
+  border: none;
   outline: none;
+  padding: 0px;
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
 }
 
 .todoList-container {
@@ -55,7 +52,6 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   background-color: transparent;
-  padding: 20px;
   box-sizing: border-box;
 }
 
@@ -71,35 +67,38 @@ body {
   align-items: center;
   justify-content: space-between;
   font-size: 16px;
-  border-bottom: solid 1px lightgrey;
+  border-bottom: solid 1px #f3f3f3;
   padding: 6px;
   box-sizing: border-box;
   min-height: 40px;
+  cursor: default;
+}
+
+.todoList-todo input {
+  margin-right: 8px;
+}
+
+.todoList-todo input:checked + lable {
+  text-decoration: line-through;
+  color: rgb(200, 200, 200);
 }
 
 .todoList-todo button {
-  height: 20px;
-  width: 20px;
-  color: black;
-  color: black;
+  color: transparent;
   border-radius: 10px;
   border: none;
   background-color: transparent;
   box-shadow: none;
   outline: none;
+  cursor: pointer;
 }
 
-.todoList-todo:hover button {
-  box-shadow: 0px 1px 6px #888888;
-  border: solid 1px lightgrey;
+.todoList-todo:hover .todoList-editButtom {
+  color: #41e24f;
 }
 
-.todoList-doneButtom:hover {
-  background-color: #87c87b;
-}
-
-.todoList-deleteButtom:hover {
-  background-color: #c37474;
+.todoList-todo:hover .todoList-deleteButtom {
+  color: red;
 }
 
 .todoList-todo span {
@@ -119,11 +118,26 @@ body {
 }
 
 .todoLightbox {
-  width: 100px;
-  height: 100px;
+  width: 40vw;
+  height: 200px;
+  position: relative;
+  border-radius: 6px;
   background-color: white;
 }
 
 .todoLightbox button {
   background-color: transparent;
+  border: none;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  color: grey;
+  font-size: 12px;
+  cursor: pointer;
+  outline: none;
+  transition: color 0.6s;
+}
+
+.todoLightbox button:hover {
+  color: red;
 }

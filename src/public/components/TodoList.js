@@ -26,13 +26,18 @@ class TodoList extends React.Component {
           {this.props.todos.map((todo, idx) => (
             <div className="todoList-todo" key={idx}>
               <div>
-                <button
-                  onClick={this.props.showLightbox}
-                  className="todoList-doneButtom"
-                />
-                <span>{todo}</span>
+                <input type="checkbox" className="todo" />
+                <lable className="todo">{todo}</lable>
               </div>
-              <button className="todoList-deleteButtom" />
+              <div>
+                <button
+                  className="todoList-editButtom"
+                  onClick={this.props.showLightbox}
+                >
+                  EDIT
+                </button>
+                <button className="todoList-deleteButtom">DELETE</button>
+              </div>
             </div>
           ))}
         </div>
