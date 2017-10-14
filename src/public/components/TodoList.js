@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { showLightbox, hideLightbox } from '../actions.js';
+import { updateTodos, showLightbox, hideLightbox } from '../actions.js';
 
 import Lightbox from './Lightbox';
 import TodoLightbox from './TodoLightbox';
@@ -15,9 +15,15 @@ const defaultProps = {};
 class TodoList extends React.Component {
   constructor(props) {
     super(props);
+    this.handleDeleteTodo = this.handleDeleteTodo.bind(this);
   }
   componentDidUpdate() {
     this.refs.todoListWrapper.scrollTop = this.refs.todoListWrapper.scrollTop = 0;
+  }
+  handleDeleteTodo(index) {
+    const copiedState = [...this.props.todos];
+    copiedState.splice(index, 1);
+    this.props.updateTodos(copiedState);
   }
   render() {
     return (
@@ -26,7 +32,7 @@ class TodoList extends React.Component {
           {this.props.todos.map((todo, idx) => (
             <div className="todoList-todo" key={idx}>
               <div>
-                <input type="checkbox" className="todo" />
+                <input type="checkbox" />
                 <lable className="todo">{todo}</lable>
               </div>
               <div>
@@ -36,7 +42,12 @@ class TodoList extends React.Component {
                 >
                   EDIT
                 </button>
-                <button className="todoList-deleteButtom">DELETE</button>
+                <button
+                  className="todoList-deleteButtom"
+                  onClick={() => this.handleDeleteTodo(idx)}
+                >
+                  DELETE
+                </button>
               </div>
             </div>
           ))}
@@ -62,7 +73,8 @@ const mapStateToProps = state => ({
 });
 const mapDispachToProps = dispatch => ({
   showLightbox: () => dispatch(showLightbox()),
-  hideLightbox: () => dispatch(hideLightbox())
+  hideLightbox: () => dispatch(hideLightbox()),
+  updateTodos: todos => dispatch(updateTodos(todos))
 });
 
 export default connect(mapStateToProps, mapDispachToProps)(TodoList);

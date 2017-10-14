@@ -97,8 +97,16 @@ body {
   color: #41e24f;
 }
 
+.todoList-editButtom:hover {
+  color: grey !important;
+}
+
 .todoList-todo:hover .todoList-deleteButtom {
   color: red;
+}
+
+.todoList-deleteButtom:hover {
+  color: grey !important;
 }
 
 .todoList-todo span {
