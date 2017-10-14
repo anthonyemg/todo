@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 
-const todos = (state = [], action) => {
+const todos = (state = ['take out trash', 'gym'], action) => {
   switch (action.type) {
     case 'UPDATE_TODOS':
       return action.payload;

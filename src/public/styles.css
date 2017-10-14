@@ -45,7 +45,6 @@ body {
   border-top: transparent;
   border-left: transparent;
   border-right: transparent;
-  border-bottom: solid 1px #6eb062;
   outline: none;
 }
 
@@ -75,25 +74,32 @@ body {
   border-bottom: solid 1px lightgrey;
   padding: 6px;
   box-sizing: border-box;
-}
-.todoList-todo:hover button {
-  box-shadow: 0px 1px 6px #888888;
-  color: black;
+  min-height: 40px;
 }
 
 .todoList-todo button {
   height: 20px;
   width: 20px;
-  color: transparent;
+  color: black;
+  color: black;
   border-radius: 10px;
-  background-color: transparent;
   border: none;
+  background-color: transparent;
   box-shadow: none;
   outline: none;
 }
 
-.todoList-todo button:active {
-  background-color: #6eb062;
+.todoList-todo:hover button {
+  box-shadow: 0px 1px 6px #888888;
+  border: solid 1px lightgrey;
+}
+
+.todoList-doneButtom:hover {
+  background-color: #87c87b;
+}
+
+.todoList-deleteButtom:hover {
+  background-color: #c37474;
 }
 
 .todoList-todo span {

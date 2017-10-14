@@ -5,7 +5,9 @@ import { connect } from 'react-redux';
 const propTypes = {
   todos: PropTypes.array.isRequired
 };
-const defaultProps = {};
+const defaultProps = {
+  todos: ['af', 'sf']
+};
 
 class TodoList extends React.Component {
   constructor(props) {
@@ -21,10 +23,10 @@ class TodoList extends React.Component {
           {this.props.todos.map((todo, idx) => (
             <div className="todoList-todo" key={idx}>
               <div>
-                <button />
+                <button className="todoList-doneButtom" />
                 <span>{todo}</span>
               </div>
-              <button />
+              <button className="todoList-deleteButtom" />
             </div>
           ))}
         </div>
